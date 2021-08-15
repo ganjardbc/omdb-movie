@@ -113,7 +113,10 @@ class App extends Component {
                 <div id="header" className="box-shadow">
 					<div id="header-container">
 						<div style={{ paddingTop: 3, width: '100%' }}>
-                            <form onSubmit={() => this.onSearch(search)} className="display-flex space-between align-center">
+                            <form onSubmit={(e) => {
+                                e.preventDefault()
+                                this.onSearch(search)
+                            }} className="display-flex space-between align-center">
                                 <div style={{width: 'calc(100% - 102px)'}}>
                                     <input 
                                         type="text" 
@@ -134,7 +137,7 @@ class App extends Component {
 					</div>
 				</div>
 
-				<div className="display-flex wrap">
+                <div className="display-flex wrap">
                     {datas && datas.map((dt, i) => {
                         return (
                             <div key={i} className="width width-row-3">
@@ -145,6 +148,16 @@ class App extends Component {
                         )
                     })}
                 </div>
+
+				{datas && datas.length === 0 && (
+                    <div className="content-center" style={{ paddingTop: 20, paddingBottom: 20 }}>
+                        <div className="fonts fonts-22 grey" style={{ paddingBottom: 20, paddingTop: 20 }}>
+                            <i className="fa fa-2x fa-video-slash" />
+                        </div>
+                        <div className="fonts fonts-13 black semibold">No Movie's Found</div>
+                        <div className="fonts fonts-11 grey">Try to search movie by their titles</div>
+                    </div>
+                )}
 
                 {visibleLoader && (
                     <Loader />
