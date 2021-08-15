@@ -35,7 +35,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div style={{ width: '100%', height: 40 }}>
-                        <NavLink to={ '/detail/' + data.title }>
+                        <NavLink to={ '/detail/' + data.id }>
                             <button className="btn btn-sekunder btn-full">
                                 Detail <i className="icn icn-right fa fa-lw fa-arrow-right" />
                             </button>

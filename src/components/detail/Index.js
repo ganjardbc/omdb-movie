@@ -22,7 +22,7 @@ class App extends Component {
     getData (url) {
         this.setState({ visibleLoader: true  })
 
-        axios.get(`https://www.omdbapi.com/?apikey=5bbce687&t=${url}`, {
+        axios.get(`https://www.omdbapi.com/?apikey=5bbce687&i=${url}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
@@ -54,7 +54,7 @@ class App extends Component {
                                 <i className="fa fa-lg fa-arrow-left" />
                             </button>
                         </div>
-                        <div className="fonts fonts-12 semibold black" style={{ marginLeft: 10 }}>{ url }</div>
+                        <div className="fonts fonts-12 semibold black" style={{ marginLeft: 10 }}>{ data && data.Title ? data.Title : url }</div>
 					</div>
 				</div>
 
