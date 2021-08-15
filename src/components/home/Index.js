@@ -44,7 +44,7 @@ class App extends Component {
             data = []
         }
 
-        axios.get(`http://www.omdbapi.com/?apikey=5bbce687&s=${search}&page=${offset}`, {
+        axios.get(`https://www.omdbapi.com/?apikey=5bbce687&s=${search}&page=${offset}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',

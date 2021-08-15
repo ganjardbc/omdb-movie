@@ -22,7 +22,7 @@ class App extends Component {
     getData (url) {
         this.setState({ visibleLoader: true  })
 
-        axios.get(`http://www.omdbapi.com/?apikey=5bbce687&t=${url}`, {
+        axios.get(`https://www.omdbapi.com/?apikey=5bbce687&t=${url}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
